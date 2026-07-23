@@ -83,7 +83,7 @@ export const founder = {
   name: 'Ivan Kirchev',
   role: 'Founder & Lead AI Engineer',
   initials: 'IK',
-  image: '',
+  image: '/ivan-kirchev.png',
   bio: [
     'I have spent more than seven years building enterprise software across Java microservices, fintech, and applied AI.',
     'Today, I design agentic applications, RAG platforms, evaluation systems, and AI initiatives from roadmap to reliable delivery—working with a trusted network of specialists when a project calls for a broader team.',
