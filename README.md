@@ -28,4 +28,3 @@ For a custom domain (e.g. `velithic.com`), set it under Pages and keep Vite `bas
 
 Primary copy, service definitions, the calendar URL, and founder information live in `src/content.js`.
 
-To replace the founder placeholder, add a portrait to `public/` and set `founder.image` to its root-relative path, for example `/ivan-kirchev.webp`.
