@@ -1122,6 +1122,10 @@ h2 em {
   color: var(--warm-white);
 }
 
+.brand-footer .brand-mark {
+  color: var(--deep-green);
+}
+
 .footer-inner > p {
   margin: 0;
   color: #9fb5a5;
