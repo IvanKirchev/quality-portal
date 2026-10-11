@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react'
 import {
   BOOKING_URL,
   founder,
-  lifecycleAgents,
   navItems,
   principles,
   services,
-  sources,
 } from './content.js'
 
 function BrandMark() {
@@ -23,15 +21,6 @@ function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20">
       <path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-function ExternalIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 18 18">
-      <path d="M7 4h7v7M14 4 6 12" fill="none" stroke="currentColor" strokeLinecap="round" />
-      <path d="M12 10v4H4V6h4" fill="none" stroke="currentColor" strokeLinecap="round" />
     </svg>
   )
 }
@@ -191,7 +180,6 @@ function Hero() {
       </section>
 
       <Services />
-      <KnowledgeSystem />
       <Principles />
       <About />
       <FinalCallToAction />
@@ -217,96 +205,53 @@ function Services() {
       <div className="container">
         <SectionHeading
           eyebrow="What we build"
-          title="Practical AI, at the point where work happens."
-          copy="Start with a focused engagement or combine capabilities around a larger AI initiative. Every path is grounded in measurable workflow value."
+          title="Production AI, engineered beyond the prototype"
+          copy={(
+            <>
+              <span>Building an AI demo is increasingly easy. Building a system that remains accurate, observable, secure, and cost-effective in production is not.</span>
+              <span>Velithic AI designs the complete engineering layer around AI applications—from agent behavior and evaluation to organizational knowledge, permissions, integrations, and operational visibility.</span>
+            </>
+          )}
         />
-        <div className="service-grid">
+        <div className="service-list">
           {services.map((service) => (
             <article className={`service-card ${service.featured ? 'is-featured' : ''}`} key={service.title}>
-              <div className="service-card-top">
-                <span className="service-number">{service.number}</span>
-                {service.featured && <span className="feature-label">Signature capability</span>}
+              <header className="service-card-heading">
+                <h3>{service.title}</h3>
+                <p className="service-subtitle">{service.subtitle}</p>
+              </header>
+
+              <div className="service-card-body">
+                <div className="service-narrative">
+                  <p>{service.description}</p>
+                  <p>{service.supportingText}</p>
+                  {service.note && <p className="service-note">{service.note}</p>}
+
+                  {service.examples && (
+                    <div className="service-examples">
+                      <h4>Example applications</h4>
+                      <ul>
+                        {service.examples.map((example) => (
+                          <li key={example.title}>
+                            <strong>{example.title}</strong>
+                            <span>{example.description}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <aside className="service-capabilities" aria-label={`${service.title} core capabilities`}>
+                  <h4>Core capabilities</h4>
+                  <ul>
+                    {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
+                  </ul>
+                </aside>
               </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <p className="service-outcome">{service.outcome}</p>
-              <ul>
-                {service.details.map((detail) => <li key={detail}>{detail}</li>)}
-              </ul>
             </article>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
-
-function FlowArrow() {
-  return (
-    <div className="flow-arrow" aria-hidden="true">
-      <span />
-      <svg viewBox="0 0 20 20"><path d="M5 4l6 6-6 6" fill="none" stroke="currentColor" /></svg>
-    </div>
-  )
-}
-
-function KnowledgeSystem() {
-  return (
-    <section className="section knowledge-section" id="system">
-      <div className="container">
-        <div className="knowledge-intro">
-          <div>
-            <p className="eyebrow eyebrow-light"><span /> In development at Velithic</p>
-            <h2>One knowledge layer.<br /><em>Agents for every handoff.</em></h2>
-          </div>
-          <div className="knowledge-copy">
-            <p>
-              We are developing a system that turns existing organizational data into portable, structured knowledge—then gives each step of the software delivery lifecycle an agent with the right context and boundaries.
-            </p>
-            <a
-              className="format-link"
-              href="https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Built on the vendor-neutral Open Knowledge Format
-              <ExternalIcon />
-            </a>
-          </div>
-        </div>
-
-        <div className="system-flow" aria-label="Existing organizational data flows into an Open Knowledge Format layer and then to lifecycle agents">
-          <div className="flow-column source-column">
-            <span className="flow-label">01 / Existing context</span>
-            <div className="source-list">
-              {sources.map((source) => <span key={source}>{source}</span>)}
-            </div>
-          </div>
-          <FlowArrow />
-          <div className="flow-column okf-column">
-            <span className="flow-label">02 / Portable knowledge</span>
-            <div className="okf-core">
-              <span className="core-orbit orbit-one" />
-              <span className="core-orbit orbit-two" />
-              <small>Open Knowledge Format</small>
-              <strong>Shared<br />domain context</strong>
-              <span className="core-status"><i /> Versioned · linked · agent-readable</span>
-            </div>
-          </div>
-          <FlowArrow />
-          <div className="flow-column agent-column">
-            <span className="flow-label">03 / Lifecycle agents</span>
-            <div className="agent-grid">
-              {lifecycleAgents.map((agent, index) => (
-                <span key={agent}><small>{String(index + 1).padStart(2, '0')}</small>{agent}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <p className="independence-note">
-          Velithic AI’s system is an independent project. Open Knowledge Format is an open format hosted in the GoogleCloudPlatform Knowledge Catalog repository.
-        </p>
       </div>
     </section>
   )

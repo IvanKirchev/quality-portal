@@ -2,58 +2,81 @@ export const BOOKING_URL = 'https://cal.eu/velithicai/30min'
 
 export const navItems = [
   { label: 'Services', href: '#services' },
-  { label: 'The system', href: '#system' },
   { label: 'Principles', href: '#principles' },
   { label: 'About', href: '#about' },
 ]
 
 export const services = [
   {
-    number: '01',
-    title: 'Applied AI training',
+    title: 'AI Agents',
+    subtitle: 'Custom agents designed for dependable production use',
     description:
-      'Role-specific workshops that turn AI curiosity into safe, repeatable habits for engineering, product, delivery, and leadership teams.',
-    outcome: 'Your teams leave with workflows they can use the next morning.',
-    details: ['Hands-on exercises', 'Team playbooks', 'Adoption roadmaps'],
-  },
-  {
-    number: '02',
-    title: 'Custom agent harnesses',
-    description:
-      'Purpose-built agents that understand your domain, use your tools, and coordinate complex work with explicit control points.',
-    outcome: 'Automate the handoffs around expert work—not the judgment inside it.',
-    details: ['Multi-agent orchestration', 'Human approvals', 'Enterprise integrations'],
+      'We build AI agents around your workflows, systems, and domain knowledge. Every solution includes the engineering needed to understand how the agent behaves, measure its quality, control its actions, and operate it sustainably.',
+    supportingText:
+      'Our agent harnesses combine evaluation, observability, guardrails, human approval, and cost controls—so agents remain transparent, resilient, and reliable as models, data, and business requirements evolve.',
+    examples: [
+      {
+        title: 'Conversational AI',
+        description: 'Assistants grounded in internal documentation for employee enablement, customer support, and client assistance.',
+      },
+      {
+        title: 'Mobile and web automation',
+        description: 'In-house agent technology that transforms natural-language instructions into reproducible UI tests and automation flows.',
+      },
+      {
+        title: 'Context-aware coding agents',
+        description: 'Securely connect coding agents to internal systems, architecture, and engineering knowledge, with support for SQL, Java, TypeScript, and Python.',
+      },
+    ],
+    capabilities: [
+      'Custom agent harnesses and orchestration',
+      'Automated and human-led evaluations',
+      'Tracing, monitoring, and observability',
+      'Guardrails and human approval workflows',
+      'Quality, latency, and cost optimization',
+      'Resilience to model, data, and workflow changes',
+    ],
     featured: true,
   },
   {
-    number: '03',
-    title: 'RAG & conversational AI',
+    title: 'RAG and Knowledge Systems',
+    subtitle: 'Trusted organizational knowledge for agents and applications',
     description:
-      'Knowledge applications that connect scattered internal sources and return useful, permission-aware answers with traceable evidence.',
-    outcome: 'Make organizational knowledge accessible, grounded, and actionable.',
-    details: ['Hybrid retrieval', 'Source citations', 'Quality evaluation'],
+      'We design versioned and validated data pipelines that transform fragmented organizational information into reliable, permission-aware knowledge for AI systems.',
+    supportingText:
+      'Velithic integrates documents, databases, APIs, source code, and operational platforms into vector, graph, or hybrid retrieval architectures. Each system is designed to improve answer quality, reduce hallucinations, and avoid unnecessary context and token consumption.',
+    note:
+      'Knowledge graphs are used where relationships, traceability, and multi-step retrieval create measurable value—including GraphRAG architectures—rather than being treated as a standalone objective.',
+    capabilities: [
+      'Versioned ingestion and transformation pipelines',
+      'Data validation and quality monitoring',
+      'Vector, graph, and hybrid retrieval',
+      'Multi-source knowledge integration',
+      'Permission-aware retrieval',
+      'Source attribution and traceable answers',
+      'Retrieval and answer-quality evaluation',
+      'Context and token optimization',
+    ],
   },
   {
-    number: '04',
-    title: 'POC to production',
+    title: 'MCP and Agent Integrations',
+    subtitle: 'Secure tools that connect agents to real systems',
     description:
-      'A rigorous assessment and engineering path for AI prototypes that need to become dependable internal or customer-facing systems.',
-    outcome: 'Know what is ready to scale, what must change, and how quality is proven.',
-    details: ['Evaluations & guardrails', 'Security & privacy', 'Observability & cost'],
+      'We build custom Model Context Protocol servers that give AI agents controlled access to business APIs, data, and operational tools.',
+    supportingText:
+      'Each integration is designed with authentication, authorization, auditability, and clear tool boundaries. Role-based access ensures that agents—and the people using them—can reach only the capabilities and information they are permitted to use.',
+    capabilities: [
+      'Custom MCP server development',
+      'Secure API and data integrations',
+      'Authentication and authorization',
+      'Role-based access control',
+      'Tool-level permissions and validation',
+      'Audit logs and operational visibility',
+      'Safe read and write operations',
+      'Integration testing and evaluation',
+    ],
+    featured: true,
   },
-]
-
-export const sources = ['Product docs', 'Tickets & roadmaps', 'Code & decisions', 'Operational data']
-
-export const lifecycleAgents = [
-  'Discover',
-  'Plan',
-  'Refine',
-  'Build',
-  'Review',
-  'Test',
-  'Release',
-  'Learn',
 ]
 
 export const principles = [
